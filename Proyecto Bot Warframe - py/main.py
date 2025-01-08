@@ -16,3 +16,7 @@ if isinstance(data, list):
 else:
     print("El formato de los datos ha cambiado o no se encontraron fisuras.")
 
+#Quiero añadir unos comentarios de prueba
+#Quiero añadir unos comentarios de prubea
+#Quiero añadir unos comentarios de prubea
+#Quiero añadir unos comentarios de prubea
