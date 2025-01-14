@@ -8,9 +8,9 @@ data = json.loads(response.text)
 
 #En este bloque de funcion lo unico que hago es checkear si el parametro 'isDay'
 #es true o false para dar su respectivo mensaje con el tiempo que tardara en rotar al siguiente
-if isinstance (data, dict):
-    if data.get ('isDay', False):
-        print ("La rotacion de la tierra esta en Dia")
+if isinstance(data, dict):
+    if data.get('isDay', False):
+        print("Earth's rotation is in Daytime")
     else:
-        print ("La rotacion de la tierra esta en Noche")
-    print (f"Tiempo restante: {data.get('timeLeft')}")
+        print("Earth's rotation is in Nighttime")
+    print(f"Time remaining: {data.get('timeLeft')}")

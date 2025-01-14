@@ -10,15 +10,16 @@ data = json.loads(response.text)
 # Iterar sobre los datos y extraer información relevante
 if isinstance(data, list):
     for fissure in data:
-        print(f"Tipo de reliquia: {fissure.get("tier", "Desconocido")}")
-        print(f"Nodo: {fissure.get("node", "Desconocido")}")
-        print(f"Tipo de misión: {fissure.get("missionType", "Desconocido")}")
-        print(f"Estado: {fissure.get("active", "Desconocido")}")
-        print(f"Nivel requerido: {fissure.get("enemyLevels", "No especificado")}")
-        isSteelPath = fissure.get("isHard", False)  
-        print(f"Steel Path: {"Sí" if isSteelPath else "No"}")
+        print(f"Relic type: {fissure.get('tier', 'Unknown')}")
+        print(f"Node: {fissure.get('node', 'Unknown')}")
+        print(f"Mission type: {fissure.get('missionType', 'Unknown')}")
+        print(f"Status: {fissure.get('active', 'Unknown')}")
+        print(f"Required level: {fissure.get('enemyLevels', 'Not specified')}")
+        isSteelPath = fissure.get('isHard', False)  
+        print(f"Steel Path: {'Yes' if isSteelPath else 'No'}")
         print("-------------------")
 else:
-    print("El formato de los datos ha cambiado o no se encontraron fisuras.")
+    print("The data format has changed or no fissures were found.")
+
 
 

@@ -1,0 +1,1 @@
+#Este archivo solo sirve para que PY reconozca la carpeta "Eventos" como una carpeta y no un simple modulo

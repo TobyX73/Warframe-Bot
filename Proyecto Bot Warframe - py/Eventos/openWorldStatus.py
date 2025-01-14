@@ -15,9 +15,9 @@ for world, url in urls.items():
     response = requests.get(url)
     data = json.loads(response.text)
     if isinstance(data, dict):
-        print (f"---- {world} -----")
-        print (f"Estado actual: {data.get('state', 'Desconocido')}")
-        print (f"Tiempo restante: {data.get('timeLeft', 'Desconocido')}")
-        print ("--------------------")
+        print(f"---- {world} -----")
+        print(f"Current state: {data.get('state', 'Unknown')}")
+        print(f"Time remaining: {data.get('timeLeft', 'Unknown')}")
+        print("--------------------")
     else:
-        print("No se pudo acceder a la API")
+        print("Could not access the API")
