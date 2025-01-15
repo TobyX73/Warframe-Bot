@@ -5,7 +5,7 @@ url = "https://api.warframestat.us/pc/fissures"
 response = requests.get(url)
 data = json.loads(response.text)
 
-# Función que retorna toda la información de las fisuras
+
 # Función que retorna toda la información de las fisuras
 def Fissures():
     fissuresInfo = []  # Array para almacenar cada fisura

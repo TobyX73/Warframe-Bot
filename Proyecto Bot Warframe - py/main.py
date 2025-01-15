@@ -3,6 +3,7 @@ from dotenv import load_dotenv
 import os
 load_dotenv()
 from Eventos.fissure import Fissures
+from Eventos.earthRotation import Rotation
 
 
 TelegramToken = os.getenv("TelegramToken") #Esta linea lo que hace es que trae el Token desde el dotenv
@@ -19,20 +20,19 @@ def send_welcome(message):
         "/StatusWorlds - See the statuses of the three important open worlds."
     )
     
-
 #Comando de Eventos 
 @bot.message_handler(commands=["Relics", "Relic", "relics", "relic"])
 def FissureVoid(message):
     FissuresInfo = Fissures() 
-    bot.reply_to(message, FissuresInfo)
+    bot.reply_to(message, FissuresInfo, "\n aaaaaaaa")
 
- 
+@bot.message_handler(commands=["Rotation", "rotation"])
+def FissureVoid(message):
+    RotationInfo = Rotation() 
+    bot.reply_to(message, RotationInfo)
+
 @bot.message_handler(func=lambda message: message.text.startswith('/'))
 def unknown_command(message):
     bot.reply_to(message, "Sorry, Operator, I do not recognize that command. Please try one of the available commands.")
-
-
-
-
 
 bot.polling() #Con esta inicializamos el bot
