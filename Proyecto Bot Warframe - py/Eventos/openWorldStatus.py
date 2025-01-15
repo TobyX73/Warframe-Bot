@@ -11,13 +11,18 @@ urls = {
 #En este ciclo for, tenemos WORLD Y URL, lo que hace es que itera en cada URL y su clave es WORLD, el cual le pone el nombre al mundo abierto elegido
 #Luego checkeamos de vuelta si el formato de data es un diccionario y describe a detalle cada uno de los mundos
 #En este caso metemos el bloque de codigo de descripcion del mundo en el ciclo for, ya que itera por cada mundo y pone sus respectivos datos.
-for world, url in urls.items():
-    response = requests.get(url)
-    data = json.loads(response.text)
-    if isinstance(data, dict):
-        print(f"---- {world} -----")
-        print(f"Current state: {data.get('state', 'Unknown')}")
-        print(f"Time remaining: {data.get('timeLeft', 'Unknown')}")
-        print("--------------------")
-    else:
-        print("Could not access the API")
+def openWorldInfo():
+    worldInfo = []  # Lista para almacenar información de los mundos abiertos
+    for world, url in urls.items():
+        response = requests.get(url)
+        data = json.loads(response.text)  # Parsear la respuesta en JSON
+        if isinstance(data, dict):  # Verificar que la respuesta sea un diccionario
+                eachWorldInfo = (
+                    f"---- {world} ----- \n"
+                    f"Current state: {data.get('state', 'Unknown')} \n"
+                    f"Time remaining: {data.get('timeLeft', 'Unknown')} \n"
+                    "--------------------"
+                )
+                worldInfo.append(eachWorldInfo)
+    return "\n".join(worldInfo) if worldInfo else "Could not fetch data for any world."
+ 

@@ -7,7 +7,7 @@ data = json.loads(response.text)
 
 
 # Función que retorna toda la información de las fisuras
-def Fissures():
+def FissuresInfo():
     fissuresInfo = []  # Array para almacenar cada fisura
     if isinstance(data, list):
         for fissure in data:
